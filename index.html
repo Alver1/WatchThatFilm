@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <form action="/action_page.php">
+        <div class="imgcontainer">
+            <img src="logo.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label><b>Email</b></label><br />
+            <input type="text" placeholder="Enter Email" name="uname" required><br />
+            <label><b>Password</b></label><br />
+            <input type="password" placeholder="Enter Password" name="psw" required><br />
+            <button type="submit">Login</button>        
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <label><b>New user?</label><br />
+            <button onclick="location.href = 'signup.html';" type="button">Sign Up</button><br />
+        </div>
+     </form>
+</body>
+</html>
