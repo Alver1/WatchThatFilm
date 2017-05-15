@@ -4,11 +4,11 @@
     </head>
 
     <body>
-        <h1>Hello. This is my account management page.</h1>
+        <h1>Hello. This is my news page.</h1>
         <?php
          session_start();
          $user=$_SESSION['user'];    
-         echo'Greetings '. $user[1].'<br>';
+         echo'welcome: '. $user[1].'<br>';
          ?>
          <div id="menu">
             <ul>

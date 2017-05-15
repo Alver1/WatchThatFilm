@@ -13,6 +13,6 @@
         echo '<script language="javascript">';
         echo 'alert("New user has been added to the database.")';
         echo '</script>';
-        header('Refresh: 0; url=https://watchthatfilm.000webhostapp.com');
+        header('Refresh: 0; url=../index.html');
     }
 ?>
