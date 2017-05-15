@@ -5,14 +5,33 @@
         $fname = $_POST['first_name'];
         $lname = $_POST['last_name'];
         $password = $_POST['password'];
-        $sqlinsert = "INSERT INTO USERS (email, first_name, last_name, password) VALUES ('$email', '$fname', '$lname', '$password')";
-
-        if (!mysqli_query($dbconnect, $sqlinsert)) {
-            die('Error inserting new user.');
+        $repeat_password = $_POST['repeat_password'];
+        $sqlcheck = "SELECT * FROM users WHERE email='$email'";
+        $sqlinsert = "INSERT INTO users (email, first_name, last_name, password) VALUES ('$email', '$fname', '$lname', '$password')";
+        $result = mysqli_query($dbconnect, $sqlcheck) or die(mysqli_error($dbconnect));
+        if (mysqli_num_rows($result) > 0) {
+            echo '<script language="javascript">';
+            echo 'alert("Email already taken.")';
+            echo '</script>';
+            header('Refresh: 0; url=../signup.html');
         }
-        echo '<script language="javascript">';
-        echo 'alert("New user has been added to the database.")';
-        echo '</script>';
-        header('Refresh: 0; url=../index.html');
+        else if ($password !== $repeat_password) {
+            echo '<script language="javascript">';
+            echo 'alert("Passwords do not match.")';
+            echo '</script>';
+            header('Refresh: 0; url=../signup.html');
+        }
+        else if (!mysqli_query($dbconnect, $sqlinsert)) {
+            echo '<script language="javascript">';
+            echo 'alert("Error in signing up.")';
+            echo '</script>';
+            header('Refresh: 0; url=../signup.html');
+        }
+        else {
+            echo '<script language="javascript">';
+            echo 'alert("Welcome to WatchThatFilm! You can now login.")';
+            echo '</script>';
+            header('Refresh: 0; url=../index.html');
+        }
     }
 ?>

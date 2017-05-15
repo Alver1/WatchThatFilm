@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="style/main.css">
     <script>
       function newUserAdded() {
           alert("Sign up successful, you can now login to the website.");
@@ -10,26 +10,26 @@
 </head>
 <body>
 
-<h2>Signup Form</h2>
+<h2>signup form</h2>
 
 <form method="post" action="php/new_user.php" style="border:1px solid #ccc">
   <input type="hidden" name="submitted" value="true" />
   <div class="container">
 
-    <label><b>Email</b></label><br />
-    <input type="text" placeholder="Enter email address" name="email" required><br />
-    <label><b>First name</b></label><br />
-    <input type="text" placeholder="Enter first name" name="first_name" required><br /> 
-    <label><b>Last name</b></label><br />
-    <input type="text" placeholder="Enter last name" name="last_name" required><br />
-    <label><b>Password</b></label><br />
-    <input type="password" placeholder="Enter password" name="password" required><br />
-    <label><b>Repeat Password</b></label><br />
-    <input type="password" placeholder="Repeat password" name="repeat_password" required><br />
+    <label><b>email</b></label><br />
+    <input type="text" placeholder="enter email address" name="email" required><br />
+    <label><b>first name</b></label><br />
+    <input type="text" placeholder="enter first name" name="first_name" required><br /> 
+    <label><b>last name</b></label><br />
+    <input type="text" placeholder="enter last name" name="last_name" required><br />
+    <label><b>password</b></label><br />
+    <input type="password" placeholder="enter password" name="password" required><br />
+    <label><b>repeat password</b></label><br />
+    <input type="password" placeholder="repeat password" name="repeat_password" required><br />
 
     <div class="clearfix">
-        <button type="submit" class="signupbtn">Sign Up</button>
-        <button onclick="location.href = 'index.html';" type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">sign up</button>
+        <button onclick="location.href = 'index.html';" type="button" class="cancelbtn">cancel</button>
     </div>
   </div>
 </form>

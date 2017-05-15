@@ -16,7 +16,7 @@ if(isset($_POST['submitted'])){
     }
     else{
         echo '<script language="javascript">';
-        echo 'alert("Username and password did not match.")';
+        echo 'alert("Email and password did not match.")';
         echo '</script>';
         header('Refresh: 0; url=../index.html');
     }
