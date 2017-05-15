@@ -25,7 +25,7 @@
                 <label><b>current password</b></label><br />
                 <input type="password" placeholder="enter current password" name="currentpassword" required><br />
                 <label><b>new password</b></label><br />
-                <input type="password" placeholder="rnter new password" name="newpassword" required><br />
+                <input type="password" placeholder="enter new password" name="newpassword" required><br />
                 <label><b>repeat new password</b></label><br />
                 <input type="password" placeholder="repeat new password" name="repeatnew" required><br />
                 <button style="width:160px" type="submit">change password</button>        

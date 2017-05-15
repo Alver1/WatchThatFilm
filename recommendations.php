@@ -27,6 +27,8 @@
                 </tr>
             <?php
                 include('php/connect_mysql.php');
+                session_start();
+                $user = $_SESSION['user'];
                 $sqlselect = "SELECT id_FILMS, title, poster, release_date FROM films";
                 $result = mysqli_query($dbconnect, $sqlselect) or die(mysqli_error($dbconnect));
                 
@@ -35,10 +37,12 @@
                     while ($row = mysqli_fetch_row($result)) {
                         $query1 = "SELECT * FROM likes WHERE fk_FILMSid_FILMS='$row[0]' AND status='1'";
                         $query2 = "SELECT * FROM likes WHERE fk_FILMSid_FILMS='$row[0]' AND status='0'";
+                        $watchcheck = "SELECT * FROM likes WHERE fk_FILMSid_FILMS='$row[0]' AND fk_USERSid_USERS='$user[0]'";
                         $positive = mysqli_query($dbconnect, $query1) or die(mysqli_error($dbconnect));
                         $negative = mysqli_query($dbconnect, $query2) or die(mysqli_error($dbconnect));
                         $score = mysqli_num_rows($positive) - mysqli_num_rows($negative);
-                        if ($score > 0) {
+                        $havewatched = mysqli_query($dbconnect, $watchcheck) or die(mysqli_error($dbconnect));
+                        if ($score > 0 && mysqli_num_rows($havewatched) === 0) {
                             echo '<tr><td><img id="poster" src="'. $row[2] . '"></td><td>' . $row[1] . '</td><td>' . 
                             $row[3] . '</td><td>' . $score . '</td><td><a href="php/like.php?id=' . 
                             $row[0] . '">+1</a></td><td><a href="php/dislike.php?id=' . $row[0] . '">-1</a></td></tr>';
