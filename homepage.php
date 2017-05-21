@@ -9,8 +9,8 @@
     <body>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="homepage.php">home</a>
-            <a href="recommendations.php">recommendations</a>
+            <a href="recommendations.php">recommended</a>
+            <a href="watchedfilms.php">watched</a>
             <a href="accountmanager.php">account</a>
             <a href="php/sign_out.php">logout</a>
         </div>
