@@ -13,6 +13,7 @@
             <a href="recommendations.php">recommended</a>
             <a href="watchedfilms.php">watched</a>
             <a href="accountmanager.php">account</a>
+            <a href="about.html">about</a>
             <a href="php/sign_out.php">logout</a>
         </div>
         <div id="main">
