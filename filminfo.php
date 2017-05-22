@@ -11,7 +11,8 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="homepage.php">home</a>
             <a href="recommendations.php">recommended</a>
-            <a href="watchedfilms.php">watched</a>
+            <a href="upcoming.php">upcoming</a>
+            <a href="watchedfilms.php">seen</a>
             <a href="accountmanager.php">account</a>
             <a href="about.html">about</a>
             <a href="php/sign_out.php">logout</a>

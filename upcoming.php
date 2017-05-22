@@ -25,7 +25,6 @@
                     <th>poster</th>
                     <th>title</th>
                     <th>release date</th>
-                    <th><th>
                 </tr>
             <?php
                 include('php/connect_mysql.php');
@@ -35,12 +34,11 @@
                 if (mysqli_num_rows($result) > 0) {
                     // output data of each row
                     while ($row = mysqli_fetch_row($result)) {
-                        if (date("Y-m-d") > $row[3]){
+                        if (date("Y-m-d") < $row[3]) {
                             echo '<tr><td><img id="poster" src="'. $row[2] . '"></td><td><a href="filminfo.php?id=' . 
                             $row[0] . '">' . $row[1] . '</a></td><td>' . 
-                            $row[3] . '</td><td><a class="button" href="php/like.php?id=' . 
-                            $row[0] . '">+1</a></td><td><a class="button" href="php/dislike.php?id=' . $row[0] . '">-1</a></td></tr>';
-                        }           
+                            $row[3] . '</td></tr>';
+                        }                     
                     }
                 } 
                 else {

@@ -11,7 +11,8 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="homepage.php">home</a>
             <a href="recommendations.php">recommended</a>
-            <a href="watchedfilms.php">watched</a>
+            <a href="upcoming.php">upcoming</a>
+            <a href="watchedfilms.php">seen</a>
             <a href="accountmanager.php">account</a>
             <a href="about.html">about</a>
             <a href="php/sign_out.php">logout</a>
@@ -44,7 +45,7 @@
                         $negative = mysqli_query($dbconnect, $query2) or die(mysqli_error($dbconnect));
                         $score = mysqli_num_rows($positive) - mysqli_num_rows($negative);
                         $havewatched = mysqli_query($dbconnect, $watchcheck) or die(mysqli_error($dbconnect));
-                        if ($score > 0 && mysqli_num_rows($havewatched) === 0) {
+                        if ($score > 0 && mysqli_num_rows($havewatched) === 0 && date("Y-m-d") > $row[3]) {
                             echo '<tr><td><img id="poster" src="'.
                             $row[2] . '"></td><td><a href="filminfo.php?id=' .  $row[0] . '">' . $row[1] . '</a></td><td>' . 
                             $row[3] . '</td><td>' . $score . '</td><td><a class="button" href="php/like.php?id=' . 
