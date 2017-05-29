@@ -40,7 +40,7 @@
                             users' feedback. In addition to default sort-by-date option you can also sort this page by score by mouseovering anywhere on the table</li>
                     <li><b>upcoming.</b> Here you can see the list of films in the database that aren't released yet.</li>
                     <li><b>seen.</b> Shows the list of all films that you have given feedback on.</li>
-                    <li><b>account.</b> Here you can change your current password or delete your account entirely.</li>
+                    <li><b>account.</b> Here you can specify what kind of films should be recommended to you (by default all genres are shown in recommendations). You can also change your current password or delete your account entirely here.</li>
                 </ul>
         </div>
     </body>
