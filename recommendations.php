@@ -27,7 +27,7 @@
 				echo "<div style='float:right;clear:right;font-size:17px'><a href='php/sign_out.php'>logout</a></div>";
 			?>
             <input type="text" id="searchInput" onkeyup="searchBar()" placeholder="mouseover, click, double click the table for different sorting options ..." title="Type in a name">
-            <table onmouseenter="sortTableAsc(3)" onclick="sortTableAsc(2)" ondblclick="sortTableDesc(2)" id="filmTable">
+            <table onmouseenter="sortTableAsc(3)" onclick="sortTableAsc(3)" ondblclick="sortTableDesc(3)" id="filmTable">
                 <tr>
                     <th>poster</th>
                     <th>title</th>
