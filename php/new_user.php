@@ -27,7 +27,16 @@
             echo '</script>';
             header('Refresh: 0; url=../signup.html');
         }
-        else {
+        else { // successful registration
+            $id = mysqli_insert_id($dbconnect);
+            $getgenrecount = "SELECT COUNT(*) AS count FROM genre_list";
+            $count = mysqli_query($dbconnect, $getgenrecount) or die(mysqli_error($dbconnect));
+            $data = mysqli_fetch_assoc($count);
+            for ($i = 1; $i <= $data['count']; $i++)
+            {
+                $insertpreference = "INSERT INTO genre_preferences (userID, genreID, status) VALUES('$id', '$i', '1')";
+                $prefquery = mysqli_query($dbconnect, $insertpreference) or die(mysqli_error($dbconnect));
+            }
             echo '<script language="javascript">';
             echo 'alert("Welcome to WatchThatFilm! You can now login.")';
             echo '</script>';

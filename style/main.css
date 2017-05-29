@@ -121,6 +121,14 @@ a:active {
 #main {
     transition: margin-left .5s;
     padding: 16px;
+    position: relative;
+    margin-top: 20px;
+}
+
+#menuspan {
+    font-size:30px;
+    cursor:pointer;
+    margin-bottom:50px;
 }
 
 @media screen and (max-height: 450px) {
@@ -129,8 +137,6 @@ a:active {
 }
 
 #searchInput {
-    /*background-image: url('/style/images/searchicon.png'); /* Add a search icon to input */
-    background-position: 0px -25px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
     width: 100%; /* Full-width */
     font-size: 17px; /* Increase font-size */
